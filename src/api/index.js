@@ -1,3 +1,4 @@
+const {upsertItem} = require("../service/upsertJson");
 const router = require('express').Router();
 
 let doc = {}
@@ -17,6 +18,11 @@ doc['/v1/example'] = {
 
 router.get('/v1/example', (req, res, next) => {
     res.json({result: 'success'})
+})
+
+router.put('/v1/json', (req, res, next) => {
+    const response = upsertItem(req.body)
+    res.json(response)
 })
 
 router.swaggerPaths = doc
