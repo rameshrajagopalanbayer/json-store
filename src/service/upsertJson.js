@@ -32,9 +32,9 @@ const upsertItem = async (req, res, next) => {
             id: json.id,
             application_code: json.application_code
         },
-        UpdateExpression: 'SET records = :dataRow',
+        UpdateExpression: 'SET records = :records',
         ExpressionAttributeValues: {
-            ":dataRow": json.dataRow,
+            ":records": json.records,
         },
         ReturnValues: "ALL_NEW",
     };
