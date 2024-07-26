@@ -1,0 +1,15 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "4.0.0",
+    "title": "json-store",
+    "contact": {
+      "name": "Your Name Here",
+      "email": "example@example.com"
+    }
+  },
+  "basePath": "/",
+  "produces": [
+    "application/json"
+  ]
+}

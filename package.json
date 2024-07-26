@@ -1,0 +1,50 @@
+{
+  "name": "json-store",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "NODE_ENV=production node ./bin/www.js",
+    "dev": "cross-env NODE_ENV=development NODE_OPTIONS=--max-http-header-size=64000 supervisor -i node_modules -w . -e graphqls,md,js bin/www.js",
+    "clean": "rimraf .env public/.env public/styles/style.* public/scripts/bundle.js public/scripts/bundle.js.map public/service-bindings.js public/deployable-version.json coverage",
+    "lint": "cross-env eslint .",
+    "lint:fix": "cross-env eslint --fix .",
+    "test": "NODE_ENV=test mocha test",
+    "test:log": "NODE_ENV=test mocha --timeout 50000 -R json-stream test > mocha.log"
+  },
+  "description": "",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "dependencies": {
+    "@monsantoit/config": "~3.1.6",
+    "@monsantoit/ping-page": "~3.1.1",
+    "body-parser": "~1.20.2",
+    "compression": "~1.7.4",
+    "dotenv": "~16.4.5",
+    "express": "~4.19.2",
+    "lodash": "~4.17.21",
+    "moment": "~2.30.1",
+    "swagger-tools": "~0.10.4"
+  },
+  "engines": {
+    "node": "^20"
+  },
+  "devDependencies": {
+    "chai": "~5.1.1",
+    "chai-as-promised": "~8.0.0",
+    "cors": "~2.8.5",
+    "cross-env": "~7.0.3",
+    "eslint": "~9.7.0",
+    "husky": "~9.1.2",
+    "json-loader": "~0.5.7",
+    "mocha": "~10.7.0",
+    "mocha-prepare": "~0.1.0",
+    "prettier": "~3.3.3",
+    "rimraf": "~6.0.1",
+    "sinon": "~18.0.0",
+    "sinon-chai": "~4.0.0",
+    "supervisor": "~0.12.0"
+  }
+}
