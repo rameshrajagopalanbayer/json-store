@@ -5,7 +5,7 @@
 ```json
 {
   "id": "some-code3",
-  "application_code": "envision3",
+  "category_code": "envision3",
   "records": [
     {
       "ID": "CU00048376",

@@ -9,8 +9,8 @@ const getItem = async (req, res, next) => {
     const params = {
         TableName: 'json-store',
         Key: {
-            id: req.query.id,
-            application_code: req.query.application_code
+            id: req.params.id,
+            category_code: req.params.category_code
         }
     };
     const command = new GetCommand(params);
@@ -30,7 +30,7 @@ const upsertItem = async (req, res, next) => {
         TableName: 'json-store',
         Key: {
             id: json.id,
-            application_code: json.application_code
+            category_code: json.category_code
         },
         UpdateExpression: 'SET records = :records',
         ExpressionAttributeValues: {

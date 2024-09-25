@@ -22,7 +22,7 @@ router.get('/v1/example', (req, res, next) => {
 
 router.put('/v1/json', upsertItem)
 
-router.get('/v1/json', getItem)
+router.get('/v1/json/category-code/:category-code/id/:id', getItem)
 
 router.swaggerPaths = doc
 router.swaggerDefintions = {}
